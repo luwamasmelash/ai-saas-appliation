@@ -13,7 +13,9 @@ app.use(cors())
 app.use(express.json())
 app.use(clerkMiddleware())
 
-
+app.use('/', (req, res) => {
+    res.send('Server running!')
+})
 app.use(requireAuth())
 
 app.use('/api/ai', aiRouter)
